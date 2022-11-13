@@ -1,1 +1,38 @@
-不会写 放弃
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+    </head> 
+
+    <body> 
+
+      	<p>请输入密码</p> 
+
+     	<input type="text"  id="user"/>
+
+	  	<button onClick="beat()">login</button>
+         
+
+      <!--重定向到其他网页的脚本-->   
+
+	  	<script src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+		<script>
+        	function beat() { 
+				var content=document.getElementById("user");
+				$("user").val();
+
+
+
+           		window.location.href="./" + content.value + "/index.html"; 
+
+         	} 
+
+      	</script> 
+
+   	</body> 
+
+</html>
