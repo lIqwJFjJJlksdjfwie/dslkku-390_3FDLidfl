@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证结果</title>
+    <link rel="stylesheet" href="./flexible.js">
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        body{
+            /* box-sizing: border-box; */
+            text-align: center;
+/*             font-weight: 400; */
+            font-family: "Microsoft YaHei",Arial,sans-serif,"system-ui";
+        }
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+            margin:0;
+            padding:0;
+        }
+        .box{
+          margin: 0 auto;
+        }
+        .box .shijian{
+           
+            font-size: 52px;
+/*             font-weight: 400; */
+            line-height: 55px;
+            color: #0101f4;
+        }
+        .box .shijian span{
+            display: block;
+        }
+        .box .zipai{
+            width: 134px;
+            height: 192px;
+        }
+        .box .yunxu{
+            margin-bottom: 2px;
+            width: 88px;
+        }
+        h4{
+            font-size: 18px;
+            font-weight: 375;
+            line-height: 32px;
+        }
+        h2{
+            font-size: 24px;
+/*             font-weight: 372; */
+            line-height: 48px;
+        }
+        .yanse{
+            color: rgb(13,170,34);
+        }
+        .box .bumen{
+            color: #05a208;
+        }
+        .diyi{
+            margin-top: 18px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="box">
+        <h4 class="diyi">您的进入校园验证结果</h4>
+        <img src="./00.jpg" alt="" class="zipai">
+        <div class="bumen">
+             <h2>马世博</h2>
+             <h4>部门：工学院</h4>
+        </div>
+        <h4>原因:申请外出后回来</h4>
+       <h4 class="yanse">您可以进校</h4>
+       <img src="./addd.png" alt="" class="yunxu">
+       <h4>扫码时间:</h4>
+       <div class="shijian">
+          <span class="nianyue"></span>
+          <span class="dian"></span>
+       </div>
+       <h4 style="margin:0 18px ;">提示：异地返校或寒暑假返校仅支持一次扫码进校验证</h4>
+    </div>
+    <script>
+        var shijian=document.querySelector('.shijian')
+        var nianyue=shijian.querySelector('.nianyue')
+        var dian=shijian.querySelector('.dian')
+    //   获取现在的时间
+        var date= new Date();
+        console.log(date);
+        // 按照自己的格式获取现在时间
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var day=date.getDate();
+        console.log(day);
+        var arr=['星期天','星期一','星期二','星期三','星期四','星期五','星期六']
+        var h=date.getHours();
+        var m=date.getMinutes()-4;
+        var s=date.getSeconds();
+        month=month>9?month:'0'+month;
+        day=day>9?day:'0'+day;
+        h=m>=0?h:h-1;
+        h=h>9?h:'0'+h;
+        m=m>=0?m:60+m;
+        m=m>9?m:'0'+m;
+        s=s>9?s:0+s;
+        console.log(m);
+       nianyue.innerHTML=(month+'月'+day+'日');
+       dian.innerHTML=(h+':'+m)
+    </script>
+</body>
+</html>
+
